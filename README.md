@@ -6,7 +6,6 @@ Convert file under ./src to Json so that Ai can read it.
 ## 📄 Usage
 
 ```
-pnpm install -D cbj
 npx cbj
 ```
 
