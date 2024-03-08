@@ -6,11 +6,16 @@ Convert file under ./src to Json so that Ai can read it.
 ## 📄 Usage
 
 ```
+pnpm install -D cbj
 npx cbj
 ```
 
-File will be created cbj_output.json at ./
+File will be created at ./cbj_output.json
 Just upload to chat gpt. It will understand.
+
+## 🧱 Contribution
+
+Welcome. Just PR.
 
 ## 📄 License
 
