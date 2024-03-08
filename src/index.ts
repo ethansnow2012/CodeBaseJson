@@ -31,5 +31,5 @@ const dirPath = './src'; // Replace with your directory path
 const filesData = readFilesRecursively(dirPath);
 const jsonContent = JSON.stringify(filesData, null, 2);
 
-fs.writeFileSync('output.json', jsonContent); // This writes the JSON data to output.json
+fs.writeFileSync('cbj_output.json', jsonContent); // This writes the JSON data to output.json
 console.log('Files data written to output.json');
