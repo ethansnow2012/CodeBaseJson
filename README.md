@@ -1,7 +1,7 @@
 
 # CodeBaseJson
 
-Convert file under ./src to Json so that Ai can read it.
+Convert file under ./src to a single Json File so that you can upload to Chatgpt.
 
 ## 📄 Usage
 
