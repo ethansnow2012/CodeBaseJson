@@ -1,6 +1,6 @@
 {
   "name": "cbj",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/index.js",
   "bin": {
@@ -19,7 +19,7 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "cbj": "^0.0.3",
+    "cbj": "0.0.5",
     "ignore": "^5.3.1"
   }
 }
