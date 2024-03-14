@@ -18,7 +18,7 @@ const processData = (fileData: FileData[]) => {
 };
 
 export default function decompress() {
-    let cbjConfig = readConfig()!!
+    let cbjConfig = readConfig()
     const jsonFilePath = cbjConfig.intputFileName || 'cbj_representation.json';
 
     try {

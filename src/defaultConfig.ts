@@ -16,6 +16,7 @@ export function readConfig() {
         return (configModule || _cbjConfig) as typeof _cbjConfig;
 
     } catch (error) {
-        console.log('No cbj.config.ts found, using default configuration.', error);
+        console.log('No cbj.config.ts found, using default configuration.');
+        return _cbjConfig
     }
 }

@@ -40,7 +40,7 @@ function readFilesRecursively(dir: string, ig: Ignore, _cbjConfig: typeof cbjCon
 }
 
 export default function compress() {
-    let cbjConfig = readConfig()!!
+    let cbjConfig = readConfig()
 
     const ig = ignore();
     const gitignoreRules = readGitignore()

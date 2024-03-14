@@ -4,9 +4,16 @@
 Convert file under ./src to a single Json File so that you can upload to Chatgpt.
 
 ## 📄 Usage
-
 ```
 pnpm install -D cbj
+
+pnpm exec cbj compress // or npx cbj compress 
+pnpm exec cbj decompress // or npx cbj decompress 
+```
+
+```
+npm install -D cbj
+
 npx cbj compress 
 //or 
 npx cbj decompress 
