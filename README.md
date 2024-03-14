@@ -6,6 +6,7 @@ Convert file under ./src to a single Json File so that you can upload to Chatgpt
 ## 📄 Usage
 
 ```
+pnpm install -D cbj
 npx cbj
 ```
 
