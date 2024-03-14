@@ -1,13 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
-interface FileData {
-    path: string;
-    content: string;
-}
-
-// Replace with the path to your JSON file
-const jsonFilePath = 'cbj_output.json';
+import { readConfig } from './defaultConfig'
+import { FileData } from './type'
 
 const processData = (fileData: FileData[]) => {
     fileData.forEach(({ path: filePath, content }) => {
@@ -23,7 +17,10 @@ const processData = (fileData: FileData[]) => {
     });
 };
 
-const main = () => {
+export default function decompress() {
+    let cbjConfig = readConfig()!!
+    const jsonFilePath = cbjConfig.intputFileName || 'cbj_representation.json';
+
     try {
         const fileData = JSON.parse(fs.readFileSync(jsonFilePath, { encoding: 'utf8' })) as FileData[];
         //console.log('File data:', fileData)
@@ -33,4 +30,3 @@ const main = () => {
     }
 };
 
-main();

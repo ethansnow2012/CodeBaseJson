@@ -1,4 +1,5 @@
 module.exports = {
   dirPath: './',
-  outputFileName: 'cbj_output.json'
+  outputFileName: 'cbj_representation.json',
+  intputFileName: 'cbj_representation.json',
 };
