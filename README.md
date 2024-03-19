@@ -49,7 +49,7 @@ Next we expect ChatGpt give us the result in [cbj_representation.json].
 
 ## 🧱 Contribution
 
-Welcome. Just PR.
+Welcome. Just PR or open issue.
 
 ## 📄 License
 
