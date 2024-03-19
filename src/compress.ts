@@ -8,7 +8,7 @@ type Ignore = ReturnType<typeof ignore>;
 
 function readGitignore(): string[] {
     const forceIgnorePath = ['.git', '.gitignore', 'node_modules', 'dist', 'build', 'out', 'coverage', 'cbj_representation.json', 'cbj.config.js', '*-lock.yaml']
-    const gitignorePath = '.gitignore' //path.join('/', '.gitignore');
+    const gitignorePath = '.gitignore'; //path.join('/', '.gitignore');
     console.log('reading gitignorePath:', gitignorePath);
     if (fs.existsSync(gitignorePath)) {
         return forceIgnorePath.concat(fs.readFileSync(gitignorePath, 'utf8').split('\n'));
@@ -16,12 +16,18 @@ function readGitignore(): string[] {
     return forceIgnorePath;
 }
 
+// Function to check if the file is an image
+function isImageFile(file: string): boolean {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff'];
+    return imageExtensions.some(ext => file.endsWith(ext));
+}
+
 function readFilesRecursively(dir: string, ig: Ignore, _cbjConfig: typeof cbjConfig): FileData[] {
     let results: FileData[] = [];
 
     fs.readdirSync(dir).forEach(file => {
         file = path.resolve(dir, file);
-        if (ig.ignores(path.relative(_cbjConfig.dirPath, file))) {
+        if (ig.ignores(path.relative(_cbjConfig.dirPath, file)) || isImageFile(file)) {
             return;
         }
         const stat = fs.statSync(file);
