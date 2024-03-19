@@ -21,7 +21,7 @@ npx cbj decompress
 ```
 File will be created at ./cbj_representation.json
 
-Note:　"npx cbj@latest compress" to run the lastest
+If not lastest:　"npx cbj@latest compress" to run the lastest
 
 #### 2. install and compress
 Just upload to chat gpt with prompt template(maybe). 
@@ -46,6 +46,10 @@ Just give me  **json**,  **file** format with content Array of {"path":string, "
 ```
 Next we expect ChatGpt give us the result in [cbj_representation.json].
 
+## 🐣 Feature
+<ul>
+  <li>✅Check uncommitted changes before overwrite.</li>
+</ul>
 
 ## 🧱 Contribution
 
