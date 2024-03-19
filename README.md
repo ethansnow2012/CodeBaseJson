@@ -21,6 +21,8 @@ npx cbj decompress
 ```
 File will be created at ./cbj_representation.json
 
+Note:　"npx cbj@latest compress" to run the lastest
+
 #### 2. install and compress
 Just upload to chat gpt with prompt template(maybe). 
 
@@ -51,4 +53,4 @@ Welcome. Just PR.
 
 ## 📄 License
 
-[MIT License](https://github.com/ethansnow2012/CodeBaseJson/blob/main/LICENSE) © 2019-PRESENT [Ethan Kao](https://github.com/ethansnow2012)
+[MIT License](https://github.com/ethansnow2012/CodeBaseJson/blob/main/LICENSE) © 2024-PRESENT [Ethan Kao](https://github.com/ethansnow2012)

@@ -1,6 +1,6 @@
 {
   "name": "cbj",
-  "version": "0.0.8",
+  "version": "0.0.8-1",
   "description": "",
   "main": "dist/index.js",
   "bin": {
