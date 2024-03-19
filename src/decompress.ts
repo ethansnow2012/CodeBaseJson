@@ -1,49 +1,34 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
 import { readConfig } from './defaultConfig'
 import { FileData } from './type'
 
-const processData = (fileData: FileData[]) => {
-    fileData.forEach(({ path: filePath, content }) => {
-        const normalizedPath = path.normalize(filePath).replace(/^([A-Z]:\\|\\\\)/, '/');
-        const dir = path.dirname(normalizedPath);
-
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-
-        fs.writeFileSync(normalizedPath, content, { encoding: 'utf8' });
-        console.log(`${fs.existsSync(normalizedPath) ? 'Updated' : 'Created'}: ${normalizedPath}`);
-    });
-};
-
-// Function to check for uncommitted changes using Git
-function checkForUncommittedChanges(): boolean {
+function processBatchJsonFiles(jsonFilePath: string): void {
     try {
-        const result = execSync('git status --porcelain').toString();
-        return result !== '';
+        const fileDataBatch: FileData[] = JSON.parse(fs.readFileSync(jsonFilePath, { encoding: 'utf8' }));
+        fileDataBatch.forEach(fileData => {
+            const normalizedPath = path.normalize(fileData.path).replace(/^([A-Z]:\\|\\\\)/, '/');
+            const dir = path.dirname(normalizedPath);
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir, { recursive: true });
+            }
+            fs.writeFileSync(normalizedPath, fileData.content, { encoding: 'utf8' });
+            console.log(`${fs.existsSync(normalizedPath) ? 'Updated' : 'Created'}: ${normalizedPath}`);
+        });
     } catch (error) {
-        console.error('Error checking for uncommitted changes:', error);
-        return false;
+        console.error(`Error processing ${jsonFilePath}:`, error);
     }
 }
 
+
 export default function decompress() {
-    let cbjConfig = readConfig()
-    const jsonFilePath = cbjConfig.intputFileName || 'cbj_representation.json';
+    let cbjConfig = readConfig();
+    const intputFileName = cbjConfig.intputFileName || 'cbj_representation';
 
-    // Check for uncommitted changes before proceeding
-    if (checkForUncommittedChanges()) {
-        console.log('Warning: There are uncommitted changes. Please commit or stash them before running decompress.');
-        return;
-    }
-
-    try {
-        const fileData = JSON.parse(fs.readFileSync(jsonFilePath, { encoding: 'utf8' })) as FileData[];
-        processData(fileData);
-    } catch (error) {
-        console.error(`Error: ${error}`);
-    }
-};
+    fs.readdirSync('./').forEach(file => {
+        if (file === `${intputFileName}.json` || (file.startsWith(`${intputFileName}_`) && path.extname(file) === '.json')) {
+            processBatchJsonFiles(path.resolve('./', file));
+        }
+    });
+}

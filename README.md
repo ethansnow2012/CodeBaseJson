@@ -49,6 +49,7 @@ Next we expect ChatGpt give us the result in [cbj_representation.json].
 ## 🐣 Feature
 <ul>
   <li>✅Check uncommitted changes before overwrite.</li>
+  <li>✅Respect .gitignore file.</li>
 </ul>
 
 ## 🧱 Contribution
