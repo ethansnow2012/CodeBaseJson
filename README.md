@@ -5,21 +5,18 @@ Convert file under ./src to a single Json File so that you can upload to Chatgpt
 
 ## 📄 Usage
 #### 1. install and compress
+##### (globally)
 ```
-pnpm install -D cbj
+npm install -g cbj
+```
+##### (or locally)
+```
+npm install -D cbj // pnpm install -D cbj
 
 npx cbj compress // or pnpm exec cbj compress
 npx cbj decompress // or pnpm exec cbj decompress
 ```
 
-```
-npm install -D cbj
-
-npx cbj compress 
-//or 
-npx cbj decompress 
-```
-or npm install -g cbj
 
 File will be created at ./cbj_representation.json
 

@@ -2,13 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^20.11.25
-  cbj: 0.0.5
   ignore: ^5.3.1
   ts-node: ^10.9.2
   typescript: ^5.4.2
 
 dependencies:
-  cbj: 0.0.5
   ignore: 5.3.1
 
 devDependencies:
@@ -77,29 +75,6 @@ packages:
   /arg/4.1.3:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     dev: true
-
-  /cbj/0.0.3:
-    resolution: {integrity: sha512-kXLgpsjqFvuWikT3f68OuXADzVTyyEUA9Wy7vfNEAGHRe7+c2I6+x2lBSGhYuS4hCTT2CgmKpPtWTqpWsHRvuA==}
-    hasBin: true
-    dependencies:
-      ignore: 5.3.1
-    dev: false
-
-  /cbj/0.0.4:
-    resolution: {integrity: sha512-oX4zXBFAEaeyOqjMAXpUi2ApK5IhQFC2Y6twZwGIuUFeMDntvh9YG/yJbu0VbltYPmRavjbLTk4wnCTMwYKAmQ==}
-    hasBin: true
-    dependencies:
-      cbj: 0.0.3
-      ignore: 5.3.1
-    dev: false
-
-  /cbj/0.0.5:
-    resolution: {integrity: sha512-7aDnMhESLZGLZ6Yaosd/EwgWnjllgbXfKSnNrVesRGYfRqE7rB6dDOtTYFGRy5DNYQzKBXfhlCLWqaE27tZC1A==}
-    hasBin: true
-    dependencies:
-      cbj: 0.0.4
-      ignore: 5.3.1
-    dev: false
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}

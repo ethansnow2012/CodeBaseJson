@@ -19,7 +19,6 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "cbj": "0.0.5",
     "ignore": "^5.3.1"
   }
 }
