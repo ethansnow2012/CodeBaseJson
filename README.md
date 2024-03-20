@@ -54,6 +54,9 @@ Next we expect ChatGpt give us the result in [cbj_representation.json].
 ## 🧱 Contribution
 
 Welcome. Just PR or open issue.
+<ul>
+  <li>Need to setup jest with execa for e2e test.</li>
+</ul>
 
 ## 📄 License
 
