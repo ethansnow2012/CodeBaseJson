@@ -19,6 +19,8 @@ npx cbj compress
 //or 
 npx cbj decompress 
 ```
+or npm install -g cbj
+
 File will be created at ./cbj_representation.json
 
 If not lastest:　"npx cbj@latest compress" to run the lastest
