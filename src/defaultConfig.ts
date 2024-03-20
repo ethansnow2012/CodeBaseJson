@@ -1,7 +1,7 @@
 const _cbjConfig = {
     dirPath: './',
-    outputFileName: 'cbj_representation.json',
-    intputFileName: 'cbj_representation.json',
+    outputFileName: 'cbj_representation',
+    intputFileName: 'cbj_representation',
     batchCount: 1
 };
 export default _cbjConfig

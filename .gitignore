@@ -1,4 +1,5 @@
 /node_modules
 /dist
-./cbj_representation.json
+/cbj_representation.json
 .note
+cbj_representation_*.json
