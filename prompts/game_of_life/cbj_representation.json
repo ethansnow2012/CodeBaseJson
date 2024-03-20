@@ -1,0 +1,22 @@
+[
+    {
+      "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\package.json",
+      "content": "{\n  \"name\": \"gg\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"cbj\": \"^0.0.8\"\n  }\n}\n"
+    },
+    {
+      "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\src\\index.html",
+      "content": "\n<!DOCTYPE html>\n<html>\n<head>\n    <title>Game of Life</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"./style.css\">\n</head>\n<body>\n    <div id=\"gameBoard\"></div>\n    <button id=\"startButton\">Start</button>\n    <script src=\"./script.js\"></script>\n</body>\n</html>\n"
+    },
+    {
+      "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\src\\index.ts",
+      "content": "console.log('Hello, world!')"
+    },
+    {
+      "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\src\\script.js",
+      "content": "\nconst boardSize = 10;\nlet gameBoard = [];\nlet interval;\n\ndocument.getElementById('startButton').addEventListener('click', startGame);\n\nfunction initializeBoard() {\n    const boardElement = document.getElementById('gameBoard');\n    for (let i = 0; i < boardSize; i++) {\n        gameBoard[i] = [];\n        for (let j = 0; j < boardSize; j++) {\n            gameBoard[i][j] = false;\n            let cell = document.createElement('div');\n            cell.className = 'cell';\n            cell.addEventListener('click', () => toggleCell(i, j));\n            boardElement.appendChild(cell);\n        }\n    }\n}\n\nfunction toggleCell(x, y) {\n    gameBoard[x][y] = !gameBoard[x][y];\n    updateBoard();\n}\n\nfunction updateBoard() {\n    const cells = document.getElementsByClassName('cell');\n    for (let i = 0; i < boardSize; i++) {\n        for (let j = 0; j < boardSize; j++) {\n            let cell = cells[i * boardSize + j];\n            cell.className = gameBoard[i][j] ? 'cell alive' : 'cell';\n        }\n    }\n}\n\nfunction startGame() {\n    if (interval) {\n        clearInterval(interval);\n    }\n    interval = setInterval(nextGeneration, 500);\n}\n\nfunction nextGeneration() {\n    let newBoard = JSON.parse(JSON.stringify(gameBoard));\n    for (let x = 0; x < boardSize; x++) {\n        for (let y = 0; y < boardSize; y++) {\n            let neighbors = countNeighbors(x, y);\n            if (gameBoard[x][y]) {\n                if (neighbors < 2 || neighbors > 3) {\n                    newBoard[x][y] = false;\n                }\n            } else {\n                if (neighbors === 3) {\n                    newBoard[x][y] = true;\n                }\n            }\n        }\n    }\n    gameBoard = newBoard;\n    updateBoard();\n}\n\nfunction countNeighbors(x, y) {\n    let count = 0;\n    for (let i = -1; i <= 1; i++) {\n        for (let j = -1; j <= 1; j++) {\n            if (i === 0 && j === 0) continue;\n            let newX = x + i;\n            let newY = y + j;\n            if (newX >= 0 && newX < boardSize && newY >= 0 && newY < boardSize && gameBoard[newX][newY]) {\n                count++;\n            }\n        }\n    }\n    return count;\n}\n\nwindow.onload = initializeBoard;\n"
+    },
+    {
+      "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\src\\style.css",
+      "content": "\n#gameBoard {\n    display: grid;\n    grid-template-columns: repeat(10, 20px);\n    grid-template-rows: repeat(10, 20px);\n}\n\n.cell {\n    width: 20px;\n    height: 20px;\n    border: 1px solid black;\n    background-color: white;\n}\n\n.alive {\n    background-color: black;\n}\n"
+    }
+  ]
