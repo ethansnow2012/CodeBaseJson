@@ -2,4 +2,4 @@
 /dist
 /cbj_representation.json
 .note
-cbj_representation_*.json
+/cbj_representation_*.json

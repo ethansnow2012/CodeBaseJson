@@ -8,7 +8,7 @@ import { FileData } from './type'
 type Ignore = ReturnType<typeof ignore>;
 
 function readGitignore(): string[] {
-    const forceIgnorePath = ['.git', '.gitignore', 'node_modules', 'dist', 'build', 'out', 'coverage', 'cbj_representation.json', 'cbj.config.js', '*-lock.yaml']
+    const forceIgnorePath = ['.git', '.gitignore', 'node_modules', 'dist', 'build', 'out', 'coverage', '/cbj_representation.json', 'cbj.config.js', '*-lock.yaml']
     const gitignorePath = '.gitignore';
     console.log('reading gitignorePath:', gitignorePath);
     if (fs.existsSync(gitignorePath)) {
