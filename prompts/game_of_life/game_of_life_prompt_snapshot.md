@@ -30,8 +30,8 @@ Download Game of Life Source Code JSON ​
 ## Almost worked.
 with modify from:
 ```
-1. <link rel="stylesheet" type="text/css" href="./src/style.css">
-2. <script src="./src/script.js"></script>
+1. <link rel="stylesheet" type="text/css" href="./packages/core/style.css">
+2. <script src="./packages/core/script.js"></script>
 ```
 to:
 ```

@@ -8,7 +8,7 @@ import { FileData } from '../type';
 describe('E2E Test for File Operations', () => {
   const tempFileName = 'tempFile.js';
   const tempFilePath = path.join(__dirname, tempFileName);
-  const cbjRepresentationPath = path.join(__dirname, '../../cbj_representation.json');
+  const cbjRepresentationPath = path.join(__dirname, '../../../cbj_representation.json');
 
   it('should add, compress, check, remove, decompress, and recover a file', () => {
     // Step 1: Add a random file    
@@ -35,8 +35,8 @@ describe('E2E Test for File Operations', () => {
     // Clean up (remove the temporary file after test)
     fs.unlinkSync(tempFilePath);
   });
-
-  const testFilePath = path.join('./src', 'testFile.txt');
+  
+  const testFilePath = path.join('./packages/core', 'testFile.txt');
   const originalContent = 'Original content';
   const modifiedContent = 'Modified content';
   it('should detect and include changes in an existing file', () => {

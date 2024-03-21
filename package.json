@@ -7,9 +7,9 @@
     "cbj": "./dist/index.js"
   },
   "scripts": {
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node packages/core/index.ts",
     "build": "tsc",
-    "test": "mocha -r ts-node/register 'src/**/*.spec.ts'"
+    "test": "mocha -r ts-node/register 'packages/core/**/*.spec.ts'"
   },
   "keywords": [],
   "author": "",
