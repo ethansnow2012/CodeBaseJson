@@ -4,7 +4,7 @@ import compress from '../compress';
 import decompress from '../decompress';
 
 describe('E2E Test for basic functionality.', () => {
-  it('Go through compress/decompress without change anything.', async () => {
+  it('Go through compress/decompress without change anything.', () => {
     compress()
     decompress()
     const diff = execSync('git status --porcelain').toString()

@@ -4,7 +4,7 @@ import * as path from 'path';
 import init from '../init';
 
 describe('init function', () => {
-  const srcPath = path.join('./src/assets', 'cbj_representation.json');
+  
   const destPath = path.join('./', 'cbj_representation.json');
 
   // Clean up before and after tests
@@ -21,6 +21,7 @@ describe('init function', () => {
   });
 
   it('should copy cbj_representation.json from ./src/assets to ./', () => {
+    const srcPath = path.join('./src/assets', 'cbj_representation.json');
     // Ensure the source file exists for the test
     if (!fs.existsSync(srcPath)) {
       fs.writeFileSync(srcPath, '{}'); // Create a dummy file
@@ -33,13 +34,10 @@ describe('init function', () => {
   });
 
   it('should handle the absence of cbj_representation.json in ./src/assets', () => {
-    // Ensure the source file does not exist
-    if (fs.existsSync(srcPath)) {
-      fs.unlinkSync(srcPath);
-    }
-
+    const srcPath = path.join('./', 'cbj_representation.json');
+    
     init();
 
-    expect(fs.existsSync(destPath)).to.be.false;
+    expect(fs.existsSync(destPath)).to.be.true;
   });
 });

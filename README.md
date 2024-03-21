@@ -57,6 +57,7 @@ Welcome. Just PR or open issue.
 <ul>
   <li>Need more complete test case.</li>
   <li>Extends this outside of the js world.</li>
+  <li>Mode for silence(not so many console.log...).</li>
 </ul>
 
 ## 📄 License
