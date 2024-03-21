@@ -1,14 +1,14 @@
 import { expect } from 'chai';
 import fs from 'fs';
 import path from 'path';
-import compress from '../compress';
-import decompress from '../decompress';
-import { FileData } from '../type';
+import compress from '@/compress';
+import decompress from '@/decompress';
+import { FileData } from '@/type';
 
 describe('E2E Test for File Operations', () => {
   const tempFileName = 'tempFile.js';
   const tempFilePath = path.join(__dirname, tempFileName);
-  const cbjRepresentationPath = path.join(__dirname, '../../../cbj_representation.json');
+  const cbjRepresentationPath = path.join(process.cwd(), 'cbj_representation.json');
 
   it('should add, compress, check, remove, decompress, and recover a file', () => {
     // Step 1: Add a random file    

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "ts-node packages/core/index.ts",
     "build": "tsc",
-    "test": "mocha -r ts-node/register 'packages/core/**/*.spec.ts'"
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register 'packages/core/**/*.spec.ts'"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "execa": "^8.0.1",
     "mocha": "^10.0.0",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.2"
   },
   "dependencies": {

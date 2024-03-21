@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { execSync } from 'child_process';
-import compress from '../compress';
-import decompress from '../decompress';
+import compress from '@/compress';
+import decompress from '@/decompress';
 
 describe('E2E Test for basic functionality.', () => {
   it('Go through compress/decompress without change anything.', () => {
