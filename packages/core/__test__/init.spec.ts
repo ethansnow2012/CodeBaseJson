@@ -30,7 +30,7 @@ describe('init function', () => {
     init();
 
     expect(fs.existsSync(destPath)).to.be.true;
-    expect(fs.readFileSync(destPath, 'utf8')).to.equal(fs.readFileSync(srcPath, 'utf8'));
+    expect(fs.readFileSync(destPath, 'utf8')).to.equal(JSON.stringify(JSON.parse(fs.readFileSync(srcPath, 'utf8'))) );
   });
 
   it('should handle the absence of cbj_representation.json in ./packages/core/assets', () => {
