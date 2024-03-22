@@ -1,9 +1,8 @@
 {
   "name": "cbj",
-  "version": "0.1.11",
+  "version": "0.1.12-1",
   "description": "",
   "main": "dist/index.js",
-  "private": true,
   "bin": {
     "cbj": "./dist/index.js"
   },

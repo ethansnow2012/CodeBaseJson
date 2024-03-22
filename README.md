@@ -56,6 +56,7 @@ Next we expect ChatGpt give us the result in [cbj_representation.json].
 Welcome. Just PR or open issue.
 <ul>
   <li>Need more complete test case.</li>
+  <li>Convert more type of files to string(in the json file) so that AI can understand it.</li>
   <li>Extends this outside of the js world.</li>
   <li>Mode for silence(not so many console.log...).</li>
 </ul>
