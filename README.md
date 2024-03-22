@@ -22,6 +22,8 @@ File will be created at ./cbj_representation.json
 
 If not lastest:　"npx cbj@latest compress" to run the lastest
 
+(Optional) To initiate base cbj_representation.json with "npx cbj init"
+
 #### 2. install and compress
 Just upload to chat gpt with prompt template(maybe). 
 
