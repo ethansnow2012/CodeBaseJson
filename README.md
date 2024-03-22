@@ -1,7 +1,7 @@
 
 # CodeBaseJson
 
-Convert file under ./src to a single Json File so that you can upload to Chatgpt.
+Convert the whole codebase to a single Json File so that you can upload to Chatgpt.
 
 ## 📄 Usage
 #### 1. install and compress
