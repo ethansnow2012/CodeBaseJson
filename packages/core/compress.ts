@@ -18,7 +18,7 @@ function readGitignore(): string[] {
 }
 
 function isImageFile(file: string): boolean {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff'];
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', 'ico'];
     return imageExtensions.some(ext => file.endsWith(ext));
 }
 function readFilesRecursively(dir: string, ig: Ignore, _cbjConfig: typeof cbjConfig): FileData[] {
