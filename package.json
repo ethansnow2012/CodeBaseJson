@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "ts-node packages/core/index.ts",
     "test": "mocha -r ts-node/register -r tsconfig-paths/register 'packages/core/**/*.spec.ts'",
-    "build": "npm run test && tsc"
+    "build": "npm run test && tsc",
+    "release-patch": "pnpm version patch && pnpm run build && npm publish"
   },
   "keywords": [],
   "author": "",
