@@ -67,17 +67,30 @@ Welcome. Just PR or open issue.
   <li>Mode for silence(not so many console.log...).</li>
 </ul>
 
-## 🧱 RFC(request for comments)
+<!-- ## 🧱 RFC(request for comments)
 <ul>
   <li>Mechanism to deal with "// Other imports...", "// Other methods..." or other ai skipping behavior.</li>
-</ul>
+</ul> -->
 
 ## 🧱 Usage Attempts
 <ul>
   <li>
     ✅(most of the time) Game of Life in HTML
+  </li>
+  <li>
     ✅(most of the time) Todo-list in HTML
-    ❌ Add a Simple CRUD Feature in existing full-stack(T3 stack) app.
+  </li>
+  <li>
+    ❌ Add a simple CRUD feature to an existing full-stack (T3 stack) app. Waiting for AI to improve in reasoning capabilities.
+    <ul>
+      <li>
+      - Do not have enough respect for existing style. For example, I am using tailwind but it generates component using traditional component.
+      </li>
+      <li>
+      - Do not have enough respect for existing file structure.
+      </li>
+    </ul>
+     
   </li>
 </ul>
 
