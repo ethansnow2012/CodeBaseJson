@@ -57,10 +57,28 @@ Next we expect ChatGpt give us the result in [cbj_representation.json].
 
 Welcome. Just PR or open issue.
 <ul>
+  <li>
+  Enrich prompts to be able to deal with more cases.
+  </li>
+  <li>White list mode that confine the files and folders for safety.</li>
   <li>Need more complete test case.</li>
   <li>Convert more type of files to string(in the json file) so that AI can understand it.</li>
   <li>Extends this outside of the js world.</li>
   <li>Mode for silence(not so many console.log...).</li>
+</ul>
+
+## 🧱 RFC(request for comments)
+<ul>
+  <li>Mechanism to deal with "// Other imports...", "// Other methods..." or other ai skipping behavior.</li>
+</ul>
+
+## 🧱 Usage Attempts
+<ul>
+  <li>
+    ✅(most of the time) Game of Life in HTML
+    ✅(most of the time) Todo-list in HTML
+    ❌ Add a Simple CRUD Feature in existing full-stack(T3 stack) app.
+  </li>
 </ul>
 
 ## 📄 License
