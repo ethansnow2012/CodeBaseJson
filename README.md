@@ -47,6 +47,10 @@ Just give me  **json**,  **file** format with content Array of {"path":string, "
 ```
 Next we expect ChatGpt give us the result in [cbj_representation.json].
 
+## 🎬 Demo
+[Demo(in Mandarin)](https://www.youtube.com/watch?v=eP6AGCm7wEY)
+
+
 ## 🐣 Feature
 <ul>
   <li>✅Check uncommitted changes before overwrite.</li>
