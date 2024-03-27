@@ -46,20 +46,24 @@ Generated source code should be in ./src folder.
 Just give me  **json**,  **file** format with content Array of {"path":string, "content":string}  to download.
 ```
 Next we expect ChatGpt give us the result in [cbj_representation.json].
+<br>
 
 ## 🎬 Demo
 [Demo(in Mandarin)](https://www.youtube.com/watch?v=eP6AGCm7wEY)
-
+<br>
 
 ## 🐣 Feature
 <ul>
   <li>✅Check uncommitted changes before overwrite.</li>
   <li>✅Respect .gitignore file.</li>
 </ul>
+<br>
 
 ## 🧱 Contribution
 
 Welcome. Just PR or open issue.
+
+#### Possible Roadmap
 <ul>
   <li>
   Enrich prompts to be able to deal with more cases.
@@ -85,16 +89,15 @@ Welcome. Just PR or open issue.
     ✅(most of the time) Todo-list in HTML
   </li>
   <li>
-    ❌ Add a simple CRUD feature to an existing full-stack (T3 stack) app. Waiting for AI to improve in reasoning capabilities.
+    ❌ Failed to add a simple CRUD feature to an existing full-stack (T3 stack) app. Waiting for AI to improve in reasoning capabilities.
     <ul>
       <li>
-      - Do not have enough respect for existing style. For example, I am using tailwind but it generates component using traditional component.
+      Do not have enough respect for existing style. For example, I am using tailwind but it generates component using traditional component.
       </li>
       <li>
-      - Do not have enough respect for existing file structure.
+      Do not have enough respect for existing file structure.
       </li>
     </ul>
-     
   </li>
 </ul>
 
