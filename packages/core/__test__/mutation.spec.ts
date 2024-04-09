@@ -5,9 +5,10 @@ import compress from '@/compress';
 import decompress from '@/decompress';
 import { FileData } from '@/type';
 
+
 describe('E2E Test for File Operations', () => {
   const tempFileName = 'tempFile.js';
-  const tempFilePath = path.join(__dirname, tempFileName);
+  const tempFilePath = path.join(process.cwd(), tempFileName);
   const cbjRepresentationPath = path.join(process.cwd(), 'cbj_representation.json');
 
   it('should add, compress, check, remove, decompress, and recover a file', () => {
@@ -18,9 +19,8 @@ describe('E2E Test for File Operations', () => {
     compress();
 
     // Step 3: Check cbj_representation has the content
-    const cbjRepresentation = JSON.parse(fs.readFileSync(cbjRepresentationPath, 'utf8'));
-    const fileInRepresentation = cbjRepresentation.some((file: FileData) => file.content.includes(`content: 'console.log("This is a temporary file.");'`));
-    expect(fileInRepresentation).to.be.true;
+    const cbjRepresentation = fs.readFileSync(cbjRepresentationPath, 'utf8');
+    expect(cbjRepresentation.includes(`"path":`+' ' +`"~/tempFile.js",`)).to.be.true;
 
     // Step 4: Remove the random file
     fs.unlinkSync(tempFilePath);

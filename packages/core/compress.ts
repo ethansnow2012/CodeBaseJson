@@ -4,9 +4,10 @@ import * as path from 'path';
 import ignore from 'ignore';
 import cbjConfig, { readConfig } from './defaultConfig'
 import { FileData } from './type'
+import { homeChar } from './constants'
 
 type Ignore = ReturnType<typeof ignore>;
-const homeChar = '~';
+
 
 function readGitignore(): string[] {
     const forceIgnorePath = ['.git', '.gitignore', 'node_modules', 'dist', 'build', 'out', 'coverage', '/cbj_representation.json', 'cbj.config.js', '*-lock.yaml']

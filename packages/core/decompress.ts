@@ -4,21 +4,21 @@ import * as path from 'path';
 import { readConfig } from './defaultConfig'
 import { FileData } from './type'
 import { execSync } from 'child_process';
+import { homeChar } from './constants'
 
 function processBatchJsonFiles(jsonFilePath: string): void {
-    
     try {
         const fileDataBatch: FileData[] = JSON.parse(fs.readFileSync(jsonFilePath, { encoding: 'utf8' }));
         
         fileDataBatch.forEach(fileData => {
-            console.log('processBatchJsonFiles', fileData.path, fileData.content.length, 'bytes');    
             const normalizedPath = path.normalize(fileData.path).replace(/^([A-Z]:\\|\\\\)/, '/');
-            const dir = path.dirname(normalizedPath);
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
+            const homeDir = process.cwd()
+            const absPath = normalizedPath.replace(homeChar, homeDir)
+            if (!fs.existsSync(absPath)) {
+                fs.mkdirSync(path.dirname(absPath), { recursive: true });
             }
-            fs.writeFileSync(normalizedPath, fileData.content, { encoding: 'utf8' });
-            console.log(`${fs.existsSync(normalizedPath) ? 'Updated' : 'Created'}: ${normalizedPath}`);
+            fs.writeFileSync(absPath, fileData.content, { encoding: 'utf8' });
+            console.log(`${fs.existsSync(absPath) ? 'Updated' : 'Created'}: ${normalizedPath}`);
         });
     } catch (error) {
         console.error(`Error processing ${jsonFilePath}:`, error);
