@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install PNPM
-        run: npm i -g pnpm
+      run: npm i -g pnpm
     - run: pnpm install # or `pnpm ci` if you have a pnpm-lock.yaml
     - run: pnpm run build --if-present
     - run: pnpm test
