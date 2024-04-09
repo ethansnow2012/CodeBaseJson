@@ -25,7 +25,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        cache: 'pnpm' # specify cache for pnpm
+    - name: Install pnpm
+      run: npm install -g pnpm
+    - run: pnpm install # or `pnpm ci` if you have a pnpm-lock.yaml
+    - run: pnpm run build --if-present
+    - run: pnpm test
