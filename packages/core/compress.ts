@@ -6,6 +6,7 @@ import cbjConfig, { readConfig } from './defaultConfig'
 import { FileData } from './type'
 
 type Ignore = ReturnType<typeof ignore>;
+const homeChar = '~';
 
 function readGitignore(): string[] {
     const forceIgnorePath = ['.git', '.gitignore', 'node_modules', 'dist', 'build', 'out', 'coverage', '/cbj_representation.json', 'cbj.config.js', '*-lock.yaml']
@@ -47,13 +48,15 @@ function readFilesRecursively(dir: string, ig: Ignore, _cbjConfig: typeof cbjCon
 function generateBatchJsonFiles(dir: string, ig: Ignore, batchCount: number): void {
     const filesData = readFilesRecursively(dir, ig, cbjConfig);
     const batchSize = Math.ceil(filesData.length / batchCount);
-
+    const homeDir = process.cwd()
     for (let i = 0; i < filesData.length; i += batchSize) {
         const batchFiles = filesData.slice(i, i + batchSize);
-        const fileDataBatch = batchFiles.map(file => ({
-            path: file.path,
-            content: file.content
-        }));
+        const fileDataBatch = batchFiles.map((file) => {
+            return {
+                path: file.path.replace(homeDir, homeChar).replace(/\\/g, '/'),
+                content: file.content
+            }
+        });
         const jsonContent = JSON.stringify(fileDataBatch, null, 2);
         let outputFileName = ''
         if (batchCount === 1) {
@@ -68,6 +71,7 @@ function generateBatchJsonFiles(dir: string, ig: Ignore, batchCount: number): vo
 }
 
 export default function compress() {
+    console.log('compressing...');
     let cbjConfig = readConfig();
     const ig = ignore();
     const gitignoreRules = readGitignore();
