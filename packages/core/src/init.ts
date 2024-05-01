@@ -9,6 +9,6 @@ export default function init() {
         fs.writeFileSync(destPath, JSON.stringify(cbj_representation));
         console.log('cbj_representation.json has been copied to the project root.');
     } else {
-        console.log('cbj_representation.json does not exist in ./packages/core/assets');
+        console.log('cbj_representation.json does not exist in ./packages/core/src/assets');
     }
 }

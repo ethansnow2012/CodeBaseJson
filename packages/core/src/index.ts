@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import * as process from 'process';
-import init from "./init";
-import compress from "./compress";
-import decompress from "./decompress";
+import init from "@/init";
+import compress from "@/compress";
+import decompress from "@/decompress";
 
 
 // Main logic to parse command line arguments

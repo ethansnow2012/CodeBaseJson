@@ -1,10 +1,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { readConfig } from './defaultConfig'
-import { FileData } from './type'
+import { readConfig } from '@/defaultConfig'
+import { FileData } from '@/type'
 import { execSync } from 'child_process';
-import { homeChar } from './constants'
+import { homeChar } from '@/constants'
 
 function processBatchJsonFiles(jsonFilePath: string): void {
     try {

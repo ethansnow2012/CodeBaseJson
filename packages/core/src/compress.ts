@@ -2,9 +2,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import ignore from 'ignore';
-import cbjConfig, { readConfig } from './defaultConfig'
-import { FileData } from './type'
-import { homeChar } from './constants'
+import cbjConfig, { readConfig } from '@/defaultConfig'
+import { FileData } from '@/type'
+import { homeChar } from '@/constants'
 
 type Ignore = ReturnType<typeof ignore>;
 

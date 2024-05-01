@@ -1,0 +1,10 @@
+[
+    {
+        "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\package.json",
+        "content": "{\n  \"name\": \"gg\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"cbj\": \"^0.0.8\"\n  }\n}\n"
+    },
+    {
+        "path": "C:\\Users\\ethan\\Desktop\\code\\my\\gg\\src\\index.ts",
+        "content": "console.log('Hello, world!')"
+    }
+]
